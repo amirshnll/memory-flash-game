@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/popup.css">
+  <title>Memory Flash</title>
+</head>
+
+<body>
+  <main class="app">
+    <header>
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span>
+        <div>
+          <h1 data-i18n="appName">Memory Flash</h1>
+          <p id="subtitle">Focus. Remember. Repeat.</p>
+        </div>
+      </div><button class="icon-button" id="settings-button" aria-label="Open settings">⚙</button>
+    </header>
+    <section id="game-view">
+      <div class="stats" aria-label="Game statistics">
+        <div><span data-i18n="score">Score</span><strong id="score">0</strong></div>
+        <div><span data-i18n="level">Level</span><strong id="level">1</strong></div>
+        <div><span data-i18n="streak">Streak</span><strong id="streak">0</strong></div>
+      </div>
+      <div class="round-status" id="round-status" role="status" aria-live="polite"></div>
+      <div id="grid" class="grid" role="grid" aria-label="Memory tiles"></div>
+      <p id="hint" class="hint"></p>
+      <button id="start-button" class="primary" type="button">Start game</button><button id="pause-button"
+        class="pause hidden" type="button" data-i18n="pause">Pause</button>
+    </section>
+    <section id="game-over" class="panel hidden" aria-live="polite">
+      <div class="trophy" aria-hidden="true">✦</div>
+      <h2 data-i18n="gameOver">Game over</h2>
+      <p id="game-over-copy"></p>
+      <div class="results">
+        <div><span data-i18n="score">Score</span><strong id="final-score">0</strong></div>
+        <div><span data-i18n="best">Best</span><strong id="final-best">0</strong></div>
+        <div><span data-i18n="accuracy">Accuracy</span><strong id="final-accuracy">0%</strong></div>
+      </div><button id="play-again" class="primary" type="button" data-i18n="playAgain">Play again</button>
+    </section>
+    <section id="settings" class="panel hidden">
+      <div class="panel-title">
+        <h2 data-i18n="settings">Settings</h2><button id="close-settings" class="icon-button"
+          aria-label="Close settings">×</button>
+      </div>
+      <label><span data-i18n="language">Language</span><select id="language"></select></label><label><span
+          data-i18n="mode">Mode</span><select id="mode">
+          <option value="classic" data-i18n="classic">Classic</option>
+          <option value="lives" data-i18n="lives">3 lives</option>
+          <option value="endless" data-i18n="endless">Endless</option>
+        </select></label>
+      <label class="toggle"><input id="sound" type="checkbox"><span data-i18n="sound">Sound</span></label><label
+        class="toggle"><input id="numbered" type="checkbox"><span data-i18n="numbered">Show tile
+          numbers</span></label><label class="toggle"><input id="reduced-motion" type="checkbox"><span
+          data-i18n="reducedMotion">Reduce motion</span></label>
+      <aside><strong data-i18n="howToPlay">How to play</strong>
+        <p data-i18n="tutorial">Watch the tiles light up, then select them in exactly the same order.</p>
+      </aside>
+    </section>
+    <div class="extension-meta"><a href="https://ashokri.com/donate/" target="_blank" rel="noopener noreferrer"
+        data-i18n="donate">Donate</a><span aria-hidden="true">-</span><span data-i18n="version">Version 1.0.0</span>
+    </div>
+  </main>
+  <script type="module" src="js/popup.js"></script>
+</body>
+
+</html>
